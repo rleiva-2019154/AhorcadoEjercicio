@@ -55,12 +55,62 @@ function createLetterButons() {
         // borra el contenido que hubiese en el area del rectangulo
         ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
 
-        //dibuja la horca
-        ctx.beginPath(); // indica que ese empieza a dibujar
-        ctx.moveto(20, canvas.height - 20); // punto de inicio de la linea
-        ctx.lineTo(20,20) // punto final de la linea e inicio de la siguiente
-        ctx.lineTo(150,20);
-        ctx.lineTo(150, 50);
-        ctx.stroke(); // pinta las lineas, dibuja en el lienzo
+        if (attemps < 7){
+            //dibuja la horca
+            ctx.beginPath(); // indica que ese empieza a dibujar
+            ctx.moveto(20, canvas.height - 20); // punto de inicio de la linea
+            ctx.lineTo(20,20) // punto final de la linea e inicio de la siguiente
+            ctx.lineTo(150,20);
+            ctx.lineTo(150, 50);
+            ctx.stroke(); // pinta las lineas, dibuja en el lienzo 
+        }
+        
+        if (attemps < 6){
+            //dibuja la cabeza
+            ctx.beginPath();
+            ctx.arc(150, 90, 30, 0, Math.PI * 2); // dibuja un circulo
+            ctx.stroke();
+        }
+
+        if (attempts < 5) {
+            // Dibujar el cuerpo
+            ctx.beginPath();
+            ctx.moveTo(150, 120);
+            ctx.lineTo(150, 220);
+            ctx.stroke();
+        }
+        
+        if (attempts < 4) {
+            // Dibujar el brazo izquierdo
+            ctx.beginPath();
+            ctx.moveTo(150, 140);
+            ctx.lineTo(110, 120);
+            ctx.stroke();
+        }
+        
+        if (attempts < 3) {
+            // Dibujar el brazo derecho
+            ctx.beginPath();
+            ctx.moveTo(150, 140);
+            ctx.lineTo(190, 120);
+            ctx.stroke();
+        }
+        
+        if (attempts < 2) {
+            // Dibujar la pierna izquierda
+            ctx.beginPath();
+            ctx.moveTo(150, 220);
+            ctx.lineTo(120, 270);
+            ctx.stroke();
+        }
+        
+        if (attempts < 1) {
+            // Dibujar la pierna derecha
+            ctx.beginPath();
+            ctx.moveTo(150, 220);
+            ctx.lineTo(180, 270);
+            ctx.stroke();
+        }
+
     }
 }
